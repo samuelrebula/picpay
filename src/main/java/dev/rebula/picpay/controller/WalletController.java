@@ -3,6 +3,7 @@ package dev.rebula.picpay.controller;
 import dev.rebula.picpay.controller.dto.CreateWalletDto;
 import dev.rebula.picpay.entity.Wallet;
 import dev.rebula.picpay.service.WalletService;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,7 +19,7 @@ public class WalletController {
     }
 
     @PostMapping("/wallets")
-    public ResponseEntity<Wallet> createWallet(@RequestBody CreateWalletDto dto) {
+    public ResponseEntity<Wallet> createWallet(@RequestBody @Valid CreateWalletDto dto) {
 
         var wallet = walletService.createWallet(dto);
 
