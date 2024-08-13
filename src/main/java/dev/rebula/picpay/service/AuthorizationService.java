@@ -1,7 +1,7 @@
 package dev.rebula.picpay.service;
 
 import dev.rebula.picpay.client.AuthorizationClient;
-import dev.rebula.picpay.entity.Transfer;
+import dev.rebula.picpay.controller.dto.TransferDto;
 import dev.rebula.picpay.exception.PicPayException;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +14,7 @@ public class AuthorizationService {
         this.authorizationClient = authorizationClient;
     }
 
-    public boolean isAuthorized(Transfer transfer) {
+    public boolean isAuthorized(TransferDto transfer) {
 
         var resp = authorizationClient.isAuthorized();
 
